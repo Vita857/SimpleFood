@@ -1,3 +1,8 @@
+html, 
+body{
+  height: 100%;
+}
+
 body {
   @extend %rubik-400;
   background-color: $silver-100;
@@ -5,6 +10,12 @@ body {
   color: $dark;
   line-height: 1.4;
   font-size: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main{
+  flex-grow: 1;
 }
 
 .container {
