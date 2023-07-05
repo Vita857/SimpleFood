@@ -52,6 +52,10 @@ button{
   border-style: none;
 }
 
+svg{
+  flex-shrink: 0;
+}
+
 a,
 button,
 input,

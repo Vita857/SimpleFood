@@ -13,13 +13,14 @@
   right: 0;
   transition: padding 0.3s;
 
-  &__inner {
+  &__menu {
     display: flex;
+    justify-content: space-between;
     align-items: center;
   }
 
   &__logo {
-    margin-right: 516px;
+    margin-right: auto;
   }
 
   &--fixed {
@@ -31,6 +32,10 @@
 .menu {
   display: flex;
   align-items: center;
+}
+
+.menu__burger {
+  display: none;
 }
 
 .list {
@@ -54,6 +59,7 @@
 .user-nav {
   display: flex;
   gap: 10px;
+  padding-right: 10px;
 
   &__nam {
     position: absolute;
@@ -115,8 +121,8 @@
 
   &__img {
     max-width: 560px;
-    width: 100%;
     height: 660px;
+    width: 100%;
   }
 
   &__inner {
@@ -168,11 +174,10 @@
 }
 
 .category {
-
-svg{
-  width: 44px;
-  height: 44px;
-}
+  svg {
+    width: 44px;
+    height: 44px;
+  }
 
   &__title {
     text-align: center;
@@ -236,10 +241,7 @@ svg{
   }
 
   &__link {
-    text-decoration: underline;
-    font-size: 20px;
     line-height: 1.5;
-    cursor: pointer;
     border-radius: 5px;
   }
 }
@@ -283,7 +285,6 @@ svg{
 }
 
 .delivery {
-
   svg {
     width: 34px;
     height: 34px;
@@ -308,6 +309,9 @@ svg{
   }
 
   &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     max-width: 470px;
     width: 100%;
   }
@@ -346,11 +350,9 @@ svg{
     font-size: 24px;
     color: $darkBlue-900;
   }
-  &__svg {
-    margin-right: 30px;
-  }
 
   &__button {
+    width: 165px;
     padding: 12px 32px;
     font-size: 18px;
     cursor: pointer;
@@ -417,15 +419,14 @@ svg{
       height: 12px;
       fill: #fff;
     }
-    width: 79px;
-    height: 33px;
+    padding: 10px 30px;
     border: 2px solid transparent;
     background-color: $orange-900;
     margin-right: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
+
     border-radius: 20px;
     transition: background-color 0.3s, border 0.3s;
     cursor: pointer;
@@ -563,12 +564,14 @@ svg{
 
   &--prev {
     padding: 8px 13px 3px 11px;
-    left: 41%;
+    left: 50%;
+    transform: translate(-105px);
   }
 
   &--next {
     padding: 8px 11px 3px 13px;
-    right: 41%;
+    right: 50%;
+    transform: translate(105px);
   }
 }
 
@@ -633,7 +636,8 @@ svg{
 }
 
 .footer-top {
-  @extend %flex;
+  display: flex;
+  gap: 70px;
   padding-bottom: 72px;
 
   svg {
@@ -757,11 +761,577 @@ svg{
 }
 
 .footer-bottom {
-  border-top: 1px solid $gray 0.2;
+  border-top: 1px solid rgba($gray, 0.2);
   &__text {
     display: flex;
     justify-content: center;
     padding: 30px 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+  .header {
+    padding: 30px 0;
+
+    &--fixed {
+      padding: 10px 0;
+    }
+
+    .list {
+      margin-right: 30px;
+    }
+  }
+
+  .hero {
+    padding-bottom: 40px;
+
+    &__inner {
+      padding-top: 120px;
+    }
+
+    &__title {
+      font-size: 62px;
+    }
+
+    &__subtitile {
+      font-size: 56px;
+    }
+
+    &__content {
+      margin-right: 15px;
+      max-width: 400px;
+    }
+  }
+
+  .category {
+    &__items,
+    &__menu {
+      justify-content: center;
+    }
+
+    &__title {
+      margin-bottom: 40px;
+    }
+
+    &__items {
+      margin-bottom: 45px;
+    }
+
+    &__menu {
+      gap: 25px;
+    }
+
+    &__button {
+      font-size: 17px;
+      padding: 10px 25px;
+    }
+
+    &__link {
+      svg {
+        width: 38px;
+        height: 38px;
+      }
+    }
+  }
+
+  .product-card {
+    width: 180px;
+    height: 280px;
+    justify-content: space-between;
+
+    &__img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  .delivery {
+    &__img {
+      margin-right: 70px;
+    }
+
+    &__list-text {
+      font-size: 18px;
+    }
+
+    svg {
+      margin-right: 15px;
+    }
+  }
+
+  .restaurant {
+    &__menu {
+      justify-content: center;
+    }
+  }
+
+  .restaurant-card {
+    width: 300px;
+    height: 350px;
+
+    &__img {
+      width: 300px;
+      height: 230px;
+    }
+  }
+
+  .device {
+    &__title {
+      margin-bottom: 30px;
+    }
+  }
+
+  .footer-top {
+    padding-bottom: 52px;
+    gap: 70px;
+
+    &__lists {
+      gap: 15px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .logo {
+    width: 220px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+
+  .list {
+    &__item {
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  .hero {
+    position: relative;
+
+    &__inner {
+      height: 100vh;
+      background: rgba(249, 250, 255, 0.85);
+    }
+    &__title {
+      font-size: 62px;
+    }
+
+    &__title {
+      max-width: 420px;
+    }
+
+    &__img {
+      left: auto;
+      right: 15px;
+      bottom: 0;
+      position: absolute;
+      top: 100px;
+      z-index: -1;
+      width: 100%;
+    }
+
+    &__content {
+      max-width: 480px;
+      margin-right: 160px;
+    }
+  }
+
+  .product-card {
+    width: 160px;
+  }
+
+  .category {
+    &__items {
+      justify-content: start;
+      overflow: auto;
+    }
+  }
+
+  .slider {
     text-align: center;
+    &__item {
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    &__img {
+      margin-right: 0;
+      margin-bottom: 20px;
+      width: 270px;
+      height: 270px;
+    }
+  }
+
+  .delivery {
+    &__content {
+      max-width: 300px;
+    }
+    &__img {
+      margin-right: 15px;
+    }
+    &__text {
+      font-size: 18px;
+    }
+  }
+
+  .device {
+    margin-bottom: 30px;
+    &__inner {
+      justify-content: space-around;
+    }
+    &__content {
+      max-width: 370px;
+      margin-right: 30px;
+    }
+
+    &__bg {
+      width: 470px;
+      height: 280px;
+    }
+  }
+
+  .footer-top {
+    gap: 35px;
+
+    &__logo {
+      width: 150px;
+    }
+
+    &__input,
+    &__btn {
+      max-width: 150px;
+    }
+    &__btn {
+      svg {
+        margin-right: 8px;
+      }
+    }
+
+    &__link {
+      font-size: 16px;
+    }
+
+    &__lists {
+      gap: 5px;
+    }
+
+    .adress {
+      &__tel,
+      &__adress,
+      &__email {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 30px 0;
+    &__logo {
+      width: 180px;
+    }
+
+    &--fixed {
+      padding: 10px 0;
+    }
+
+    &__list {
+      transform: translateY(-500%);
+    }
+  }
+
+  .burger {
+    order: 4;
+    display: block;
+  }
+
+  .menu {
+    &__burger {
+      display: block;
+      transform: translateY(-200%);
+      position: absolute;
+      left: 0;
+      right: 75px;
+      top: 0;
+      bottom: 0;
+      display: block;
+      height: 100vh;
+      overflow-y: auto;
+      background-color: #fff;
+      padding: 25px 25px 15px;
+      z-index: 2;
+      transition: transform 0.3s;
+    }
+
+    &__items {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 25px;
+    }
+
+    .list__menu {
+      padding: 25px 0;
+      border-top: 1px solid #eeeff3;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .adress {
+      border-top: 1px solid #eeeff3;
+      padding: 15px 0;
+    }
+  }
+
+  .menu__burger--active {
+    transform: translateY(0);
+  }
+
+  // секция с фоном
+
+  // .lock {
+  //   overflow: hidden;
+  //   position: relative;
+  //   &::after {
+  //     content: '';
+  //     position: absolute;
+  //     left: 0;
+  //     right: 0;
+  //     top: 0;
+  //     bottom: 0;
+  //     background-color: rgba(0, 0, 0, 0.50);
+  //   }
+  // }
+
+  .product-card {
+    width: 260px;
+    &__img {
+      width: 160px;
+      height: 160px;
+    }
+  }
+
+  .restaurant-card {
+    width: 270px;
+  }
+
+  .slider {
+    &__img {
+      width: 250px;
+      height: 250px;
+    }
+
+    .slick-dots li button {
+      display: none;
+    }
+
+    .slider__arrow {
+      bottom: auto;
+      top: 110px;
+
+      &--prev {
+        left: 35%;
+      }
+
+      &--next {
+        right: 35%;
+      }
+    }
+  }
+
+  .delivery {
+    position: relative;
+    background: rgba(249, 250, 255, 0.85);
+
+    &__content {
+      max-width: 100%;
+    }
+    &__img {
+      right: 10px;
+      bottom: 0;
+      position: absolute;
+      top: 0;
+      right: auto;
+      left: auto;
+      z-index: -1;
+      width: 100%;
+      width: 348px;
+      height: 462px;
+    }
+
+    &__button {
+      margin-bottom: 25px;
+    }
+  }
+
+  .device {
+    &__content {
+      max-width: 100%;
+    }
+    &__bg {
+      display: none;
+    }
+  }
+
+  .footer-top {
+    padding-bottom: 31px;
+    display: flex;
+    flex-direction: column;
+    &__logo {
+      width: 200px;
+    }
+    &__lists {
+      gap: 20px;
+
+      order: 3;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &__input,
+    &__btn {
+      max-width: 200px;
+    }
+
+    &__link {
+      font-size: 18px;
+    }
+
+    .adress {
+      &__tel,
+      &__adress,
+      &__email {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    width: 115px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .hero {
+    &__title {
+      font-size: 40px;
+      max-width: 257px;
+    }
+
+    &__subtitile {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    &__text {
+      font-size: 16px;
+    }
+
+    &__inner {
+      height: 420px;
+      width: 100%;
+      padding-top: 30px;
+    }
+    &__img {
+      top: 100px;
+      max-width: 254px;
+      height: 300px;
+      width: 100%;
+    }
+
+    &__content {
+      margin-right: 0;
+    }
+  }
+
+  .category {
+    &__button {
+      font-size: 14px;
+    }
+
+    &__menu {
+      gap: 5px;
+    }
+  }
+
+  .product-card {
+    width: 170px;
+    height: 300px;
+    font-size: 15px;
+    &__img {
+      width: 140px;
+      height: 140px;
+    }
+  }
+
+  .restaurant-card {
+    width: 100%;
+    height: 417px;
+    &__img {
+      height: 300px;
+      width: 100%;
+    }
+  }
+
+  .delivery {
+    &__text {
+      font-size: 16px;
+    }
+  }
+
+  .slider {
+    text-align: start;
+    &__img {
+      width: 100px;
+      height: 100px;
+    }
+
+    &__text {
+      max-width: 370px;
+      font-size: 14px;
+    }
+
+    &__svg-left {
+      margin-right: 10px;
+    }
+
+    &__name {
+      font-size: 16px;
+    }
+
+    .slider__arrow {
+      bottom: auto;
+      top: 20px;
+
+      &--prev {
+        left: 45%;
+      }
+
+      &--next {
+        right: 45%;
+      }
+    }
+  }
+
+  .device {
+    &__text {
+      font-size: 14px;
+    }
   }
 }
